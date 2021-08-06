@@ -13,14 +13,14 @@ function getTime(){
 		timeOfDay = 'PM';
 		hours = hours-12
 	}
-	if (hours===12 && minutes===0 && seconds===0 && timeOfDay==='AM')
-	getDate(1);
-	if (minutes<10){
+	if (hours===0 && minutes===0 && seconds===0 && timeOfDay==='AM')
+		getDate(1);
+	if(hours<10)
+		hours=`0${hours}`;
+	if (minutes<10)
 		minutes=`0${minutes}`;
-	}
-	if (seconds<10){
+	if (seconds<10)
 		seconds = `0${seconds}`;
-	}
 	clock = document.getElementById("clock");
 	clock.innerText = `${hours}:${minutes}:${seconds}${timeOfDay}`;
 	}
