@@ -1,6 +1,7 @@
 #webpage{
 	font: normal small-caps normal 16px/1.4 Bungee;
 	color: rgba(0, 0, 0, 1.0);
+	min-width: 200px;
 	max-width: 960px;
 	width: 80%;
 	margin: 50px auto;
