@@ -90,4 +90,3 @@ function halleyCometCoutdown(day, month, year){
 getDate();
 getTime();
 setInterval(getTime, 1000);
-console.log(device-width);
