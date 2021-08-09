@@ -12,20 +12,20 @@
 }
 
 #heading{
-	font: normal small-caps normal 44px/1.0 'Bungee Shade';
+	font: normal small-caps normal 3vw/1.0 'Bungee Shade';
 	color: rgba(143, 65, 0, 1.0);
 	text-shadow: 0px 0px 15px white;
 }
 
 #bodyText{
-	font: normal normal normal 14px/1.0 Bungee;
+	font: normal normal normal 0.95vw/1.0 Bungee;
 	color: rgba(0, 0, 0, 1);
 	text-shadow: 0px 0px 3px white;
 	-webkit-text-stroke: 0;
 }
 
 #todayDate{
-	font: normal normal normal 34px/1.0 'Bungee', Fantasy;
+	font: normal normal normal 2.318vw/1.0 'Bungee', Fantasy;
 	color: rgba(25, 26, 22, 1.0);
 	text-shadow: 0px 0px 7px white;
 	-webkit-text-stroke: 0.1px white;
@@ -33,9 +33,41 @@
 }
 
 #clock{
-	font: normal normal normal 44px/1.0 'Bungee', Fantasy;
+	font: normal normal normal 3vw/1.0 'Bungee', Fantasy;
 	/*color: rgba(62, 72, 0, 1.0);*/
 	text-shadow: 0px 0px 7px white;
 	-webkit-text-stroke: 0.1px white;
 	margin: 0;
+}
+
+.eventTitle{
+	height: auto;
+	width: 40%;
+	font: normal normal normal 2vw/0.0 Bungee;
+	text-align: left;
+	margin-top: 5vw;
+	margin-bottom: 2vw;
+	text-align: center;
+}
+
+#eventImgs{
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	text-align: left;
+}
+
+#halleyCometImg{
+	height: auto;
+	width: 40%;
+}
+
+#halleyComet{
+	height: auto;
+	width: 40%;
+	font: normal small-caps normal 1.5vw/1.0 Bungee;
+	color: rgba(0, 0, 0, 1);
+	text-shadow: 0px 0px 3px white;
+	text-align: center;
 }

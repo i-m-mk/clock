@@ -23,6 +23,7 @@ function getTime(){
 		seconds = `0${seconds}`;
 	clock = document.getElementById("clock");
 	clock.innerText = `${hours}:${minutes}:${seconds}${timeOfDay}`;
+	sessionOfDay(hours, timeOfDay);
 	}
 
 function getDate(changeDate = 0){
@@ -44,8 +45,49 @@ function getDate(changeDate = 0){
 	// putting today's date as string to display.
 	todayDate = document.getElementById("todayDate");
 	todayDate.innerText = `${day}:${month}:${year}`;
+
+	halleyCometCoutdown(day, month, year)
+}
+
+function sessionOfDay(hours, timeOfDay="AM"){
+	var session="";
+
+	if (timeOfDay==='AM' && hours>=5 && hours<12)
+		session = "Morning";
+	else if (timeOfDay=='PM' && hours>=0 && hours<4)
+		session = "Afternoon";
+	else if (timeOfDay=='PM' && hours>=4 && hours<7)
+		session = "Evening";
+	else if (timeOfDay=='PM' && hours>=7 && hours<12)
+		session = "Night";
+	else if (timeOfDay=='AM' && hours>=0 && hours<5)
+		session = "Night";
+
+	dayCategory = document.getElementById("dayCategory");
+	dayCategory.innerText = `What a lovely ${session} it is!`;
+}
+
+function halleyCometCoutdown(day, month, year){
+	var cometTimeDay = 28;
+	var cometTimeMonth = 7;
+	var cometTimeYear = 2061;
+
+	if(cometTimeMonth<month){
+		yearDifference = cometTimeYear-year-1;
+		monthDifference = 12+(cometTimeMonth-month);
+		dayDifference = cometTimeDay-day;
+	}
+	else{
+		yearDifference = cometTimeYear-year;
+		monthDifference = cometTimeMonth-month;
+		dayDifference = cometTimeDay-day;
+	}
+
+	comet = document.getElementById("halleyComet");
+	comet.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
 }
 
 getDate();
 getTime();
 setInterval(getTime, 1000);
+console.log(device-width);
