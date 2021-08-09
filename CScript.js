@@ -46,7 +46,8 @@ function getDate(changeDate = 0){
 	todayDate = document.getElementById("todayDate");
 	todayDate.innerText = `${day}:${month}:${year}`;
 
-	halleyCometCoutdown(day, month, year)
+	halleyCometCoutdown(day, month, year);
+	marioBirthdayCountdown(day, month, year);
 }
 
 function sessionOfDay(hours, timeOfDay="AM"){
@@ -68,23 +69,67 @@ function sessionOfDay(hours, timeOfDay="AM"){
 }
 
 function halleyCometCoutdown(day, month, year){
-	var cometTimeDay = 28;
-	var cometTimeMonth = 7;
-	var cometTimeYear = 2061;
+	let cometTimeDay = 28;
+	let cometTimeMonth = 7;
+	let cometTimeYear = 2061;
 
 	if(cometTimeMonth<month){
 		yearDifference = cometTimeYear-year-1;
 		monthDifference = 12+(cometTimeMonth-month);
-		dayDifference = cometTimeDay-day;
+		dayDifference = Math.abs(cometTimeDay-day);
 	}
 	else{
 		yearDifference = cometTimeYear-year;
 		monthDifference = cometTimeMonth-month;
-		dayDifference = cometTimeDay-day;
+		dayDifference = Math.abs(cometTimeDay-day);
 	}
 
-	comet = document.getElementById("halleyComet");
+	comet = document.getElementById("halleyTimeText");
 	comet.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
+}
+
+function marioBirthdayCountdown(day, month, year){
+	let marioBirthDay = 10;
+	let marioBirthMonth = 3;
+	let yearDifference = 0;
+	let leapYear = (year%4===0) ? true : false;
+
+
+	if(marioBirthMonth<month && marioBirthDay>=day){
+		monthDifference = 11+(marioBirthMonth-month);
+		dayDifference = marioBirthDay-day;
+		mario = document.getElementById("marioTimeText");
+		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
+	}
+	else if(marioBirthMonth<month && marioBirthDay<day){
+		monthDifference = 11+(marioBirthMonth-month);
+		if(leapYear)
+			dayDifference = 29+(marioBirthDay-day);
+		else
+			dayDifference = 28+(marioBirthDay-day);
+		mario = document.getElementById("marioTimeText");
+		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
+	}
+	else if(marioBirthMonth>=month && marioBirthDay<day){
+		monthDifference = (marioBirthMonth-month==0) ? 11 : (marioBirthMonth-month);
+		if(leapYear)
+			dayDifference = 29+(marioBirthDay-day);
+		else
+			dayDifference = 28+(marioBirthDay-day);
+		mario = document.getElementById("marioTimeText");
+		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
+	}
+	else if(marioBirthMonth==month && marioBirthDay==day){
+		mario = document.getElementById("marioTimeText");
+		mario.innerText = `HAPPY BIRTHDAY MARIO!!!!`;
+	}
+	else{
+		monthDifference = marioBirthMonth-month;
+		dayDifference = marioBirthDay-day;
+	}
+
+	mario = document.getElementById("marioTimeText");
+	console.log(mario.innerText);
 }
 
 getDate();
