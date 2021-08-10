@@ -45,7 +45,7 @@
 
 .eventTitle{
 	height: auto;
-	width: 40%;
+	width: 26vw;
 	font: normal normal normal 2vw/0.0 Bungee;
 	text-align: left;
 	margin-top: 5vw;
@@ -53,19 +53,17 @@
 	text-align: center;
 }
 
-div.Events img{
+.imgs{
+	height: 39vh;
+	width: 26vw;
+	transition: transform 1s;
 	display: grid;
 	grid-gap: 30px;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
 	text-align: left;
 	justify-items: center;
-}
-
-.imgs{
-	height: auto;
-	width: 40%;
-	transition: transform 1s;
+	object-fit: fill;
 }
 
 .imgs:hover{
@@ -74,7 +72,7 @@ div.Events img{
 
 .timeText{
 	height: auto;
-	width: 40%;
+	width: 26vw;
 	font: normal small-caps normal 1.5vw/1.0 Bungee;
 	color: rgba(0, 0, 0, 1);
 	text-shadow: 0px 0px 3px white;

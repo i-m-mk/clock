@@ -32,6 +32,7 @@ function getDate(changeDate = 0){
 	var day = dateInfo.getDate();
 	var month = dateInfo.getMonth()+1;
 	var year = dateInfo.getFullYear();
+	var leapYear = (year%4===0) ? true : false;
 
 	// adding 0 if date and month are less than 10.
 	if (changeDate==1){
@@ -46,8 +47,8 @@ function getDate(changeDate = 0){
 	todayDate = document.getElementById("todayDate");
 	todayDate.innerText = `${day}:${month}:${year}`;
 
-	halleyCometCoutdown(day, month, year);
-	marioBirthdayCountdown(day, month, year);
+	halleyCometCoutdown(day, month, year, leapYear);
+	marioBirthdayCountdown(day, month, year, leapYear);
 }
 
 function sessionOfDay(hours, timeOfDay="AM"){
@@ -68,41 +69,68 @@ function sessionOfDay(hours, timeOfDay="AM"){
 	dayCategory.innerText = `What a lovely ${session} it is!`;
 }
 
-function halleyCometCoutdown(day, month, year){
+function halleyCometCoutdown(day, month, year, leapYear){
 	let cometTimeDay = 28;
 	let cometTimeMonth = 7;
 	let cometTimeYear = 2061;
 
-	if(cometTimeMonth<month){
+	if(cometTimeMonth<month && cometTimeDay>=day){
 		yearDifference = cometTimeYear-year-1;
 		monthDifference = 12+(cometTimeMonth-month);
-		dayDifference = Math.abs(cometTimeDay-day);
+		dayDifference = cometTimeDay-day;
+		mario = document.getElementById("halleyTimeText");
+		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
+	}
+	else if(cometTimeMonth<month && cometTimeDay<day){
+		yearDifference = cometTimeYear-year-1;
+		monthDifference = 12+(cometTimeMonth-month);
+		if(leapYear)
+			dayDifference = 31+(cometTimeDay-day);
+		else
+			dayDifference = 30+(cometTimeDay-day);
+		mario = document.getElementById("halleyTimeText");
+		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
+	}
+	else if(cometTimeMonth>=month && cometTimeDay<day){
+		if (cometTimeMonth-month==0){
+			cometTimeYear = cometTimeYear+76;
+			monthDifference = 0;
+		}
+		else
+			monthDifference = cometTimeMonth-month;
+		if(leapYear)
+			dayDifference = 31+(cometTimeDay-day);
+		else
+			dayDifference = 30+(cometTimeDay-day);
+		mario = document.getElementById("halleyTimeText");
+		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
+	}
+	else if(cometTimeMonth==month && cometTimeDay==day){
+		mario = document.getElementById("halleyTimeText");
+		mario.innerText = `Don't miss the Comet tonight!!`;
 	}
 	else{
-		yearDifference = cometTimeYear-year;
 		monthDifference = cometTimeMonth-month;
-		dayDifference = Math.abs(cometTimeDay-day);
+		dayDifference = cometTimeDay-day;
+		mario = document.getElementById("halleyTimeText");
+		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
 	}
-
-	comet = document.getElementById("halleyTimeText");
-	comet.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
 }
 
-function marioBirthdayCountdown(day, month, year){
+function marioBirthdayCountdown(day, month, year, leapYear){
 	let marioBirthDay = 10;
 	let marioBirthMonth = 3;
 	let yearDifference = 0;
-	let leapYear = (year%4===0) ? true : false;
 
 
 	if(marioBirthMonth<month && marioBirthDay>=day){
-		monthDifference = 11+(marioBirthMonth-month);
+		monthDifference = 12+(marioBirthMonth-month);
 		dayDifference = marioBirthDay-day;
 		mario = document.getElementById("marioTimeText");
 		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
 	}
 	else if(marioBirthMonth<month && marioBirthDay<day){
-		monthDifference = 11+(marioBirthMonth-month);
+		monthDifference = 12+(marioBirthMonth-month);
 		if(leapYear)
 			dayDifference = 29+(marioBirthDay-day);
 		else
@@ -121,15 +149,14 @@ function marioBirthdayCountdown(day, month, year){
 	}
 	else if(marioBirthMonth==month && marioBirthDay==day){
 		mario = document.getElementById("marioTimeText");
-		mario.innerText = `HAPPY BIRTHDAY MARIO!!!!`;
+		mario.innerText = `HAPPY BIRTHDAY MARIO!!`;
 	}
 	else{
 		monthDifference = marioBirthMonth-month;
 		dayDifference = marioBirthDay-day;
+		mario = document.getElementById("marioTimeText");
+		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
 	}
-
-	mario = document.getElementById("marioTimeText");
-	console.log(mario.innerText);
 }
 
 getDate();
