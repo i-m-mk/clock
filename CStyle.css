@@ -58,12 +58,15 @@ div.Events{
 }
 
 .imgs{
-	height: 20rem;
-	width: 26rem;
+	height: 15rem;
+	width: 21rem;
 	transition: transform 1s;
 	justify-items: center;
-	object-fit: fill;
-	zoom: 100%;
+	object-fit: cover;
+}
+
+#eventImg3, #eventImg4{
+	object-fit: contain;
 }
 
 .imgs:hover{
@@ -76,4 +79,17 @@ div.Events{
 	text-shadow: 0px 0px 3px white;
 	transition: transform 1s;
 	margin-top: 1rem;
+}
+
+
+.clock {
+  height: 20vh;
+  color: white;
+  font-size: 22vh;
+  font-family: sans-serif;
+  line-height: 20.4vh;
+  display: flex;
+  position: relative;
+  /*background: green;*/
+  overflow: hidden;
 }
