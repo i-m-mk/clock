@@ -130,7 +130,7 @@ function marioBirthdayCountdown(day, month, year, leapYear){
 		mario.innerText = `${yearDifference} years ${monthDifference} months ${dayDifference} days left`;
 	}
 	else if(marioBirthMonth<month && marioBirthDay<day){
-		monthDifference = 12+(marioBirthMonth-month);
+		monthDifference = 11+(marioBirthMonth-month);
 		if(leapYear)
 			dayDifference = 29+(marioBirthDay-day);
 		else

@@ -1,5 +1,4 @@
 #webpage{
-	font: normal small-caps normal 16px/1.4 Bungee;
 	color: rgba(0, 0, 0, 1.0);
 	width: 80%;
 	min-width: 200px;
@@ -7,7 +6,7 @@
 	margin: 50px auto;
 	text-align: center;
 	outline: 2px dashed black;
-	outline-offset: 15px;
+	outline-offset: 2rem;
 	background-color: rgba(178, 158, 194, 1.0);
 	-webkit-text-stroke: 1px black;
 	-webkit-text-size-adjust: auto;
@@ -15,55 +14,57 @@
 
 #heading{
 	min-width: 200px;
-	font: normal small-caps normal 4vw/1.0 'Bungee Shade';
+	font: normal small-caps normal 3.7rem/1.0 'Bungee Shade';
 	color: rgba(143, 65, 0, 1.0);
 	text-shadow: 0px 0px 15px white;
 }
 
 #bodyText{
-	font: normal normal normal 0.95vw/1.0 Bungee;
+	font: normal normal normal 0.9rem/1.0 Bungee;
 	color: rgba(0, 0, 0, 1);
 	text-shadow: 0px 0px 3px white;
 	-webkit-text-stroke: 0;
 }
 
 #todayDate{
-	font: normal normal normal 2.318vw/1.0 'Bungee', Fantasy;
+	font: normal normal normal 2.2rem/1.0 'Bungee', Fantasy;
 	color: rgba(25, 26, 22, 1.0);
 	text-shadow: 0px 0px 7px white;
 	-webkit-text-stroke: 0.1px white;
-	margin-bottom: 5px;
+	margin-bottom: 0.5rem;
 }
 
 #clock{
-	font: normal normal normal 3vw/1.0 'Bungee', Fantasy;
+	font: normal normal normal 2.8rem/1.0 'Bungee', Fantasy;
 	/*color: rgba(62, 72, 0, 1.0);*/
 	text-shadow: 0px 0px 7px white;
 	-webkit-text-stroke: 0.1px white;
 	margin: 0;
 }
 
-.eventTitle{
-	height: auto;
-	width: 26vw;
-	font: normal normal normal 2vw/0.0 Bungee;
-	text-align: left;
-	margin-top: 5vw;
-	margin-bottom: 2vw;
+.eventTitle, .timeText{
+	height: inherit;
+	width: inherit;
+	font: normal normal normal 1.7rem/0.0 Bungee;
+	margin-top: 5rem;
+	margin-bottom: 2rem;
 	text-align: center;
 }
 
-.imgs{
-	height: 39vh;
-	width: 26vw;
-	transition: transform 1s;
+div.Events{
 	display: grid;
-	grid-gap: 30px;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 	grid-template-rows: 1fr;
-	text-align: left;
+	grid-gap: 20px;
+}
+
+.imgs{
+	height: 20rem;
+	width: 26rem;
+	transition: transform 1s;
 	justify-items: center;
 	object-fit: fill;
+	zoom: 100%;
 }
 
 .imgs:hover{
@@ -71,11 +72,9 @@
 }
 
 .timeText{
-	height: auto;
-	width: 26vw;
-	font: normal small-caps normal 1.5vw/1.0 Bungee;
+	font: normal small-caps normal 1.5rem/1.0 Bungee;
 	color: rgba(0, 0, 0, 1);
 	text-shadow: 0px 0px 3px white;
-	text-align: center;
 	transition: transform 1s;
+	margin-top: 1rem;
 }
