@@ -34,28 +34,28 @@
 
 
 #heading{
-	font: normal small-caps normal 3.7rem/1.0 'Bungee Shade';
+	font: normal small-caps normal 3.7vw/1.0 'Bungee Shade';
 	color: rgba(143, 65, 0, 1.0);
 	text-shadow: 0px 0px 15px white;
 }
 
 #bodyText{
-	font: normal normal normal 0.9rem/1.0 Bungee;
+	font: normal normal normal 0.9vw/1.0 Bungee;
 	color: rgba(0, 0, 0, 1);
 	text-shadow: 0px 0px 3px white;
 	-webkit-text-stroke: 0;
 }
 
 #todayDate{
-	font: normal normal normal 2.2rem/1.0 'Bungee', Fantasy;
+	font: normal normal normal 2.2vw/1.0 'Bungee', Fantasy;
 	color: rgba(25, 26, 22, 1.0);
 	text-shadow: 0px 0px 7px white;
 	-webkit-text-stroke: 0.1px white;
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.5vw;
 }
 
 #clock{
-	font: normal normal normal 2.8rem/1.0 'Bungee', Fantasy;
+	font: normal normal normal 2.8vw/1.0 'Bungee', Fantasy;
 	/*color: rgba(62, 72, 0, 1.0);*/
 	text-shadow: 0px 0px 7px white;
 	-webkit-text-stroke: 0.1px white;
@@ -65,22 +65,22 @@
 .eventTitle, .timeText{
 	height: inherit;
 	width: inherit;
-	font: normal normal normal 1.7rem/0.0 Bungee;
-	margin-top: 5rem;
-	margin-bottom: 2rem;
+	font: normal normal normal 1.7vw/0.0 Bungee;
+	margin-top: 5vw;
+	margin-bottom: 2vw;
 	text-align: center;
 }
 
 div.Events{
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
 	grid-template-rows: 1fr;
 	grid-gap: 20px;
 }
 
 .imgs{
-	height: 15rem;
-	width: 21rem;
+	height: 15vw;
+	width: 21vw;
 	transition: transform 1s;
 	justify-items: center;
 	object-fit: cover;
@@ -95,20 +95,20 @@ div.Events{
 }
 
 .timeText{
-	font: normal small-caps normal 1.5rem/1.0 Bungee;
+	font: normal small-caps normal 1.5vw/1.0 Bungee;
 	color: rgba(0, 0, 0, 1);
 	text-shadow: 0px 0px 3px white;
 	transition: transform 1s;
-	margin-top: 1rem;
+	margin-top: 1vw;
 }
 
 
 .clock {
-  height: 20vh;
+  height: 20vw;
   color: white;
-  font-size: 22vh;
+  font-size: 22vw;
   font-family: sans-serif;
-  line-height: 20.4vh;
+  line-height: 20.4vw;
   display: flex;
   position: relative;
   /*background: green;*/
