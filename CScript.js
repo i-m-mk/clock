@@ -69,7 +69,6 @@ function yearlyEventCountdown(eventDay, eventMonth, eventYear, eventID, eventMes
 	let eventName = eventID;
 	let previousMonth = monthOfEvent-1;
 	let addDays = 0;
-
 	addDays = (previousMonth!=2) ? ((previousMonth==1 || previousMonth==3 || previousMonth==5 || previousMonth==7
 				|| previousMonth==8 || previousMonth==10 || previousMonth==12) ? 31 : 30) : 28;
 
@@ -80,14 +79,17 @@ function yearlyEventCountdown(eventDay, eventMonth, eventYear, eventID, eventMes
 	}
 	else if(monthOfEvent<month && dayOfEvent<day){
 		yearDifference = yearOfEvent-year-1;
-		monthDifference = 11+(monthOfEvent-month);
+		console.log(yearDifference);
+		monthDifference = 12+(monthOfEvent-month);
+		console.log(monthDifference);
 		if(leapYear)
 			dayDifference = (addDays+1)+(dayOfEvent-day);
 		else
 			dayDifference = addDays+(dayOfEvent-day);
+		console.log(dayDifference);
 	}
 	else if(monthOfEvent>=month && dayOfEvent<day){
-		yearDifference = yearOfEvent+76;
+		yearDifference = (yearOfEvent==0) ? 0 : yearOfEvent-year;;
 		monthDifference = (monthOfEvent-month==0) ? 11 : (monthOfEvent-month);
 		if(leapYear)
 			dayDifference = (addDays+1)+(dayOfEvent-day);
