@@ -15,10 +15,9 @@
 	-webkit-text-size-adjust: auto;
 
 	background-image: url(images/Day-Night.jpg);
-	background-size: 201% 100%;
+	background-size: 201% 105%;
 	background-position: 0%;
 }
-
 
 @keyframes move {
 	0% {
@@ -75,7 +74,7 @@ div.Events{
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
 	grid-template-rows: 1fr;
-	grid-gap: 20px;
+	grid-gap: 1.5vw;
 }
 
 .imgs{

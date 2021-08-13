@@ -118,6 +118,7 @@ function yearlyEventCountdown(eventDay, eventMonth, eventYear, eventID, eventMes
 //essential function calls
 getDate();
 getTime();
+setInterval(getTime, 100);
 
 //Big Events Function Calls
 /*Halley's Comet*/ yearlyEventCountdown(21, 7, 2061, "eventTimeText1", "Don't miss the sky, Tonight!");
@@ -126,4 +127,3 @@ getTime();
 /*Mario's Birthday*/ yearlyEventCountdown(10, 3, 0, "eventTimeText2", "Happy Birthday Mario!!");
 /*Longest Day*/ yearlyEventCountdown(21, 6, 0, "eventTimeText3", "What! Why is it not Night yet?");
 /*Longest Night*/ yearlyEventCountdown(21, 12, 0, "eventTimeText4", "The day of Darkness is here");
-setInterval(getTime, 100);

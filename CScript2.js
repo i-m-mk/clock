@@ -8,7 +8,6 @@ if(hours == 0)
 	hours=24;
 
 function setBackground(){
-	console.log(hours);
 	if (hours>=5 && hours<20)
 		bg.style.backgroundPosition = "100% 0%";
 	else if(hours>=20 && hours<=24)
@@ -18,10 +17,16 @@ function setBackground(){
 }
 
 function changeBackground(){
+	var dateInfo = new Date();
+	var hours = dateInfo.getHours();
+	var minutes = dateInfo.getMinutes();
+	var seconds = dateInfo.getSeconds();
+
 	if (hours==5 && minutes==0 && seconds==0)
-		bg.style.animation = "move 4s ease 2s 1 reverse both";
+		bg.style.animation = "move 4s ease 2s 1 normal both";
 	else if(hours==20 && minutes==0 && seconds==0)
 		bg.style.animation = "move 4s ease 2s 1 reverse both";
 }
 setBackground();
+changeBackground();
 setInterval(changeBackground, 100);
