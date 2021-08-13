@@ -1,1 +1,1 @@
-https://i-m-mk.github.io/clock/
+https://i-m-mk.github.io/time-ride/

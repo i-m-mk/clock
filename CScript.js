@@ -14,7 +14,7 @@ function getTime(){
 
 	if (hours>12){
 		timeOfDay = 'PM';
-		hours = hours-12
+		hours = hours-12;
 	}
 	if (hours===0 && minutes===0 && seconds===0 && timeOfDay==='AM')
 		getDate(1);
@@ -33,7 +33,6 @@ function getDate(changeDate = 0){
 
 	// adding 0 if date and month are less than 10.
 	if (changeDate==1){
-		console.log("updated");
 		day = dateInfo.getDate()+1;
 	}
 	if (day<10)
@@ -73,8 +72,7 @@ function yearlyEventCountdown(eventDay, eventMonth, eventYear, eventID, eventMes
 
 	addDays = (previousMonth!=2) ? ((previousMonth==1 || previousMonth==3 || previousMonth==5 || previousMonth==7
 				|| previousMonth==8 || previousMonth==10 || previousMonth==12) ? 31 : 30) : 28;
-	
-	console.log(addDays);
+
 	if(monthOfEvent<month && dayOfEvent>=day){
 		yearDifference = yearOfEvent-year-1;
 		monthDifference = 12+(monthOfEvent-month);
@@ -107,7 +105,6 @@ function yearlyEventCountdown(eventDay, eventMonth, eventYear, eventID, eventMes
 		dayDifference = dayOfEvent-day;
 	}
 
-	console.log(eventName);
 	if (eventName!= " " && eventYear==0){
 		selectElement = document.getElementById(eventName);
 		selectElement.innerText = `0 years ${monthDifference} months ${dayDifference} days left`;
@@ -121,7 +118,6 @@ function yearlyEventCountdown(eventDay, eventMonth, eventYear, eventID, eventMes
 //essential function calls
 getDate();
 getTime();
-setInterval(getTime, 1000);
 
 //Big Events Function Calls
 /*Halley's Comet*/ yearlyEventCountdown(21, 7, 2061, "eventTimeText1", "Don't miss the sky, Tonight!");
@@ -130,3 +126,4 @@ setInterval(getTime, 1000);
 /*Mario's Birthday*/ yearlyEventCountdown(10, 3, 0, "eventTimeText2", "Happy Birthday Mario!!");
 /*Longest Day*/ yearlyEventCountdown(21, 6, 0, "eventTimeText3", "What! Why is it not Night yet?");
 /*Longest Night*/ yearlyEventCountdown(21, 12, 0, "eventTimeText4", "The day of Darkness is here");
+setInterval(getTime, 100);
